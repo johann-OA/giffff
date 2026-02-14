@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Valentine 💘</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="bg-hearts" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <header class="hero">
+      <div class="hero-content">
+
+        <div class="hero-text">
+          <div class="badge">💌</div>
+          <h1 id="title">To my favorite person 💖</h1>
+          <p class="subtitle" id="subtitle">
+            you always deserve something special
+          </p>
+
+          <div class="cta">
+            <button class="btn" id="openLetter">Open my letter ✨</button>
+            <button class="btn ghost" id="surpriseBtn">tiny surprise 🎁</button>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="her.jpeg" alt="My Love">
+        </div>
+
+      </div>
+    </header>
+
+    <section class="card" id="letterCard" hidden>
+      <h2>My Letter 💗</h2>
+      <p class="muted">Read it slowly 🙂</p>
+      <div class="letter" id="letterText">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <section class="grid">
+      <section class="card">
+        <h2>Reasons I love you 🫶</h2>
+        <ul class="reasons" id="reasonsList">
+          <!-- Filled by JS -->
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Our Memories 🌸</h2>
+        <p class="muted">Until we make more photos together… here’s a little garden of ur fav flowers for us.</p>
+
+        <div class="garden" id="garden" aria-label="Animated flower garden"></div>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <p>Made with love by <span id="yourName">You</span> ❤️</p>
+      <p class="muted" id="dateLine"></p>
+    </footer>
+  </main>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-box">
+      <button class="x" id="closeModal" aria-label="Close">✕</button>
+      <h3 id="modalTitle">Surprise 🎉</h3>
+      <p id="modalText"></p>
+      <button class="btn" id="modalBtn">muah</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

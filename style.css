@@ -1,0 +1,450 @@
+:root{
+  --bg:#0b0b12;
+  --card:#141427cc;
+  --text:#f7f7ff;
+  --muted:#c9c9e6;
+  --accent:#ff4d6d;
+  --accent2:#ffb703;
+  --border:rgba(255,255,255,.10);
+  --shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(255,77,109,.25), transparent 60%),
+              radial-gradient(900px 700px at 90% 30%, rgba(255,183,3,.18), transparent 60%),
+              var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+.wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 18px 48px;
+}
+
+.hero{
+  padding: 28px;
+  border:1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,77,109,.12), rgba(20,20,39,.55));
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+
+.badge{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:8px 12px;
+  border:1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+h1{
+  margin: 14px 0 10px;
+  font-size: clamp(28px, 5vw, 44px);
+  letter-spacing: .2px;
+}
+
+.subtitle{
+  margin: 0 0 18px;
+  color: var(--muted);
+  max-width: 58ch;
+  line-height: 1.6;
+}
+
+.cta{display:flex; gap:12px; flex-wrap:wrap}
+
+.btn{
+  border:none;
+  cursor:pointer;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-weight: 650;
+  background: linear-gradient(90deg, var(--accent), #ff2e63);
+  color: white;
+  box-shadow: 0 12px 30px rgba(255,77,109,.22);
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover{transform: translateY(-2px); filter:brightness(1.05)}
+.btn:active{transform: translateY(0px);}
+
+.btn.ghost{
+  background: rgba(255,255,255,.08);
+  border:1px solid var(--border);
+  color: var(--text);
+  box-shadow:none;
+}
+
+.card{
+  margin-top:18px;
+  padding: 22px;
+  border:1px solid var(--border);
+  border-radius: 22px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+h2{margin:0 0 6px; font-size: 20px}
+.muted{color:var(--muted); margin:0 0 14px; line-height:1.5}
+
+.letter{
+  line-height: 1.85;
+  font-size: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  border:1px solid var(--border);
+  background: rgba(0,0,0,.18);
+  white-space: pre-wrap;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 900px){
+  .grid{grid-template-columns: 1fr 1fr;}
+}
+
+.reasons{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:10px;
+}
+.reasons li{
+  padding: 12px 12px;
+  border-radius: 16px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.05);
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+.reasons li span{
+  display:inline-flex;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: rgba(255,77,109,.18);
+  align-items:center;
+  justify-content:center;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+@media (min-width: 520px){
+  .gallery{grid-template-columns: repeat(3, 1fr);}
+}
+
+.pic{
+  position:relative;
+  border-radius: 18px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  aspect-ratio: 1 / 1;
+}
+.pic img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform: scale(1.02);
+  transition: transform .2s ease;
+}
+.pic:hover img{transform: scale(1.08);}
+
+.footer{
+  text-align:center;
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  display:grid;
+  place-items:center;
+  background: rgba(0,0,0,.6);
+  padding: 18px;
+}
+.modal-box{
+  width:min(560px, 100%);
+  border-radius: 22px;
+  border:1px solid var(--border);
+  background: rgba(20,20,39,.92);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  position:relative;
+}
+.modal-box h3{margin: 6px 0 8px; font-size: 22px}
+.modal-box p{margin: 0 0 16px; color: var(--muted); line-height:1.65}
+
+.x{
+  position:absolute;
+  top:10px;
+  right:10px;
+  border:none;
+  background: rgba(255,255,255,.08);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor:pointer;
+  border:1px solid var(--border);
+}
+
+/* floating hearts background */
+.bg-hearts::before{
+  content:"";
+  position:fixed;
+  inset:-40px;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(255,77,109,.22), transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(255,183,3,.16), transparent 35%),
+    radial-gradient(circle at 30% 80%, rgba(255,77,109,.14), transparent 35%),
+    radial-gradient(circle at 85% 85%, rgba(255,183,3,.10), transparent 35%);
+  filter: blur(10px);
+  pointer-events:none;
+  z-index:-2;
+}
+
+@keyframes floaty {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-10px); }
+}
+.hero, .card{animation: floaty 3.5s ease-in-out infinite alternate;}
+/* ✅ Fix: make hidden actually hide even if .modal uses display:grid */
+[hidden] { display: none !important; }
+.hero-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.hero-text{
+  flex:1;
+  min-width:260px;
+}
+
+.hero-image{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-image img{
+  width:280px;
+  height:280px;
+  object-fit:cover;
+  border-radius:24px;
+  border:2px solid rgba(255,255,255,.1);
+  box-shadow: 0 20px 40px rgba(255,77,109,.25);
+  transition: transform .3s ease;
+}
+
+.hero-image img:hover{
+  transform: scale(1.05);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px){
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+/* ===== Flower Garden ===== */
+.garden{
+  position: relative;
+  height: 360px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(800px 300px at 50% 120%, rgba(255,77,109,.18), transparent 55%),
+    radial-gradient(700px 260px at 10% 120%, rgba(255,183,3,.10), transparent 55%),
+    rgba(255,255,255,.04);
+  overflow: hidden;
+}
+
+/* a subtle "ground" */
+.garden::after{
+  content:"";
+  position:absolute;
+  left:-10%;
+  right:-10%;
+  bottom:-45%;
+  height:70%;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.08), transparent 60%);
+  filter: blur(10px);
+}
+
+/* floating particles */
+.sparkle{
+  position:absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.25);
+  filter: blur(.2px);
+  animation: sparkle 3.8s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes sparkle{
+  0%{ transform: translateY(18px); opacity:.0; }
+  30%{opacity:.55;}
+  60%{opacity:.15;}
+  100%{ transform: translateY(-40px); opacity:0; }
+}
+
+.flower{
+  position:absolute;
+  bottom: 22px;
+  transform-origin: bottom center;
+  animation: sway 3.6s ease-in-out infinite alternate;
+}
+
+@keyframes sway{
+  from{ transform: rotate(-2deg); }
+  to{ transform: rotate(2deg); }
+}
+
+/* stem */
+.stem{
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width: 6px;
+  height: 110px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(120,255,170,.35), rgba(120,255,170,.15));
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+/* leaves */
+.leaf{
+  position:absolute;
+  bottom: 28px;
+  width: 34px;
+  height: 18px;
+  border-radius: 999px 999px 999px 0;
+  background: rgba(120,255,170,.18);
+  border: 1px solid rgba(255,255,255,.10);
+  transform-origin: left center;
+}
+.leaf.l1{ left: 50%; transform: translateX(-6px) rotate(-18deg); }
+.leaf.l2{ left: 50%; transform: translateX(-26px) rotate(165deg); bottom: 52px; }
+
+/* bloom base */
+.bloom{
+  position:absolute;
+  left:50%;
+  bottom: 96px;
+  transform: translateX(-50%);
+  width: 86px;
+  height: 86px;
+  animation: pop 1.4s ease both;
+}
+@keyframes pop{
+  from{ transform: translateX(-50%) scale(.85); opacity:.0; }
+  to  { transform: translateX(-50%) scale(1); opacity:1; }
+}
+
+/* ---------- Peony ---------- */
+.peony .bloom{
+  filter: drop-shadow(0 18px 26px rgba(255,77,109,.22));
+}
+.peony .petal{
+  position:absolute;
+  inset: 0;
+  margin:auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 22px 22px 22px 22px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%),
+              rgba(255,77,109,.22);
+  border: 1px solid rgba(255,255,255,.10);
+}
+.peony .petal.p1{ transform: rotate(0deg)   translateY(-14px); }
+.peony .petal.p2{ transform: rotate(60deg)  translateY(-14px); }
+.peony .petal.p3{ transform: rotate(120deg) translateY(-14px); }
+.peony .petal.p4{ transform: rotate(180deg) translateY(-14px); }
+.peony .petal.p5{ transform: rotate(240deg) translateY(-14px); }
+.peony .petal.p6{ transform: rotate(300deg) translateY(-14px); }
+
+.peony .center{
+  position:absolute;
+  left:50%; top:50%;
+  width: 26px; height: 26px;
+  transform: translate(-50%,-50%);
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.20), transparent 55%),
+              rgba(255,183,3,.22);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+/* ---------- Lily ---------- */
+.lily .bloom{
+  width: 90px;
+  height: 90px;
+  filter: drop-shadow(0 18px 26px rgba(255,183,3,.18));
+}
+
+.lily .petal{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width: 20px;
+  height: 58px;
+  transform-origin: bottom center;
+  border-radius: 999px 999px 18px 18px;
+  background: radial-gradient(circle at 50% 20%, rgba(255,255,255,.22), transparent 55%),
+              rgba(255,183,3,.18);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.lily .petal.p1{ transform: translate(-50%,-70%) rotate(0deg); }
+.lily .petal.p2{ transform: translate(-50%,-70%) rotate(60deg); }
+.lily .petal.p3{ transform: translate(-50%,-70%) rotate(120deg); }
+.lily .petal.p4{ transform: translate(-50%,-70%) rotate(180deg); }
+.lily .petal.p5{ transform: translate(-50%,-70%) rotate(240deg); }
+.lily .petal.p6{ transform: translate(-50%,-70%) rotate(300deg); }
+
+.lily .stamen{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width: 4px;
+  height: 34px;
+  transform: translate(-50%,-70%) rotate(10deg);
+  border-radius: 999px;
+  background: rgba(255,255,255,.18);
+}
+.lily .stamen::after{
+  content:"";
+  position:absolute;
+  top:-6px; left:50%;
+  width: 10px; height: 10px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: rgba(255,77,109,.25);
+  border: 1px solid rgba(255,255,255,.10);
+}
