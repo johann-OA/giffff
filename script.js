@@ -22,6 +22,9 @@ On good days, you make them even better.
 no one could ever replace u , u are not juste someone i love , 
 you are the only person in this world i want to love .
 
+Thank you for being you. Thank you for your patience, your kindness, and your love.
+I don’t just love you for who you are today, but for everything we are becoming together.
+
 Happy Valentine’s Day 💘
 
 Always,
@@ -229,3 +232,4 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Script crashed ❌", err);
   }
 });
+
